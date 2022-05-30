@@ -1,0 +1,442 @@
+/*main.html 메인 페이지*/
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    color: #620482;
+    background-color: white;
+}
+#header > a{
+    text-decoration: none;
+}
+
+#logo{
+    color: #620482;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 10px;
+}
+#greeting{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+}
+
+.nav{
+    background-color: white;
+    width: 100%;
+    height: 50px;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 15px 50px;
+}
+li a{
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 25px;
+}
+.nowpage{
+    border-bottom: 4px solid #620482;
+    color: #620482;
+}
+li:hover a{
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #620482;
+    color: #620482;
+}
+.mainbox{
+    margin-top: 110px;
+    height: auto;
+    min-height: 100%;
+    padding: 50px;
+    padding-bottom: 60px;
+    background-color: #f3ebf5;
+}
+.title{  
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.sub_title{  
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.films{
+    display: flex;
+    flex-wrap: wrap;
+}
+.film{
+    width: 280px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.film__img{
+    width: 190px;
+    height: 270px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.film__img:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+.booking-btn{
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    background-color: #620482;
+    opacity: 0.8;
+    color: white;
+    margin-bottom: 20px;
+}
+.booking-btn:hover{
+    background-color: white;
+    color: #620482;
+    box-shadow: 3px 3px 3px 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+footer{
+    width: 100%;
+    height: 80px;
+    padding: 15px;
+    font-size: 14px;
+    display: inline-block;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: white;
+    position: relative;
+}
+.personal-info{
+    opacity: 0.7;
+    display: inline-block;
+}
+.personal-info span{
+    font-weight: 800;
+    color: #620482;
+    opacity: 0.5;
+    margin-left: 20px;
+}
+.links{
+    float: right;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+.links img{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+}
+
+/*cinema-info.html 극장 정보 페이지*/
+.extra-info{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.table{
+    width: 450px; 
+    height: 100px; 
+    text-align: center;
+    margin: 0 10px;
+    border-collapse: collapse;
+}
+.time-table{
+    width: 300px; 
+}
+.table-caption{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+table th{
+    background-color: #CAAADB;
+}
+table td{
+    background-color: white;
+}
+
+
+/*film-info.html 영화 정보 페이지*/
+.film-info-box{
+    display: none;
+}
+
+.film__info{
+    display: flex;
+}
+.film__info div{
+    margin-left: 50px;
+}
+.film__txt{
+    font-size: 16px;
+    line-height: 2em;
+    margin-bottom: 30px;
+}
+.film__txt span{
+    color: #620482;
+    font-weight: bold;
+}
+.synopsis{
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+    background-color: whitesmoke;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*time-table.html 상영 시간표 페이지*/
+.filmtime-table{
+    margin: 20px;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #63048236;
+}
+.filmtime-table > div{
+    display: flex;
+}
+
+.screens{
+    display: flex;
+    align-items: center;
+    margin-right: 35px;
+}
+.screens > span{
+    margin-right: 10px;
+    color: #620482;
+    font-weight: bold;
+}
+.times{
+    position: relative;
+    padding: 25px 30px;
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 18px;
+    background-color: white;
+}
+.times:hover{
+    transition: all 0.3s ease-in-out;
+    background-color: whitesmoke;
+}
+.end-time{
+    position: absolute;
+    bottom: 7px;
+    right: 10px;
+    color: grey;
+    font-size: 12px
+}
+.time-table__booking-btn{
+    float: right;
+}
+
+
+/*booking.html 예약 페이지*/
+.booking__part1{
+    display: flex;
+    position: relative;
+}
+.film-cbx{
+    display: inline-block;
+    margin-right: 150px;
+}
+.film-cbx__film{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: white;
+}
+.film-cbx__film:hover{
+    background-color: #CAAADB;
+}
+.film-cbx__film input[type=radio]{
+    display: none;
+}
+.film-subinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    visibility: hidden;
+}
+select{
+    display: none;
+}
+.film-subinfo input:focus{
+    background-color: #CAAADB;
+    transition: all 0.2s ease-in-out;
+}
+
+.film-date_time input,
+.film-date_time select{
+    font-size: 18px;
+    padding: 7px;
+    border-color: #620482;
+}
+.film-date_time input{
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.film-people input{
+    width: 35px;
+    border: none;
+    border-bottom: 1px solid #620482;
+    text-align: center;
+}
+
+.next-btn{
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+}
+
+.booking__part2{
+    margin: 50px 0;
+    display: none;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.seat-table td{
+    width: 65px;
+    height: 40px;
+}
+.seat:hover{
+    background-color: #CAAADB !important;
+}
+.seat-table{
+    display: none;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.no-seat{
+    background-color: gainsboro;
+}
+
+#current-seats{
+    font-size: 16px;
+    font-weight: bold;
+}
+.booking__part3{
+    margin: 50px 0;
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.booking__part3 > div {
+    display: flex;
+}
+#booking-info{
+    margin: 25px;
+    margin-top: 50px;
+    margin-right: 70px;
+}
+#price-info{
+    padding: 15px 35px;
+    border-left: 1px solid #CAAADB;
+    width: 400px;
+}
+#price-info strong{
+    font-size: 22px;
+    color: #620482;
+}
+
+/*booking-check.html 예약 확인 페이지*/
+#booking-list{
+    display: block;
+}
+#booking-list li{
+    width: 90%;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 2px 3px 5px 3px rgba(0, 0, 0, 0.5); 
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+#booking-list li:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+li{
+    background-color: white;
+}
+#booking-list__default{
+    text-align: center;
+    opacity: 0.6;
+}
+#booking-list img{
+    width: 100px;
+    height: 150px;
+}
+.booking-list__info{
+    display: inline-block;
+    margin-left: 20px;
+}
+.detail-btn{
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+}
+
+/*booking-detail.html 예매 상세 내역 페이지*/
+#cancel{
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #620482;
+    color: white;
+}
+#cancel:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #620482;
+    transition: all 0.2s ease-in-out;
+}
+#book-detail{
+    font-size: 16px;
+}
+.detail__title{
+    margin-right: 20px;
+    opacity: 0.7;
+}
+#detail__cancel{
+    color: #620482;
+}

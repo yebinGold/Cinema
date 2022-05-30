@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema - 홈</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <a href="main.html"><div id="logo">Violet Cinema</div></a>
+        <span id="greeting">김예빈님, 환영합니다</span>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="#" class="nowpage">홈</a>
+                </li>
+                <li>
+                    <a href="cinema-info.html">극장 소개</a>
+                </li>
+                <li>
+                    <a href="time-table.html">상영시간표</a>
+                </li>
+                <li>
+                    <a href="booking.html">영화 예매</a>
+                </li>
+                <li>
+                    <a href="booking-check.html">예매 확인/취소</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="mainbox">
+        <h2 class="title">상영 중인 영화</h2>
+        <div class="films">
+            <div class="film">
+                <a href="film-info.html?num=1">
+                    <img class="film__img" src="media/doctor2.jpeg" alt="docterstrange2">
+                </a>
+                <span class="film__name">닥터스트레인지2: 대혼돈의 멀티버스</span>
+                <button class="booking-btn" onclick="location.href='booking.html'">예매하기</button>    
+            </div>
+            <div class="film">
+                <a href="film-info.html?num=2">
+                    <img class="film__img" src="media/spiderman.jpeg" alt="spiderman">
+                </a>
+                <span class="film__name">스파이더맨: 노 웨이 홈</span>
+                <button class="booking-btn" onclick="location.href='booking.html'">예매하기</button>    
+            </div>
+            <div class="film">
+                <a href="film-info.html?num=3">
+                    <img class="film__img" src="media/venom.jpeg" alt="venom">
+                </a>
+                <span class="film__name">베놈</span>
+                <button class="booking-btn" onclick="location.href='booking.html'">예매하기</button>    
+            </div>
+            <div class="film">
+                <a href="film-info.html?num=4">
+                    <img class="film__img" src="media/ifonly.jpeg" alt="ifonly">
+                </a>
+                <span class="film__name">이프 온리</span>
+                <button class="booking-btn" onclick="location.href='booking.html'">예매하기</button>    
+            </div>
+            <div class="film">
+                <a href="film-info.html?num=5">
+                    <img class="film__img" src="media/forest.jpeg" alt="littleforest">
+                </a>
+                <span class="film__name">리틀 포레스트</span>
+                <button class="booking-btn" onclick="location.href='booking.html'">예매하기</button>    
+            </div>
+            <div class="film">
+                <a href="film-info.html?num=6">
+                    <img class="film__img" src="media/star.jpeg" alt="starisborn">
+                </a>
+                <span class="film__name">스타 이즈 본</span>
+                <button class="booking-btn" onclick="location.href='booking.html';">예매하기</button>    
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span id="logo">Violet Cinema</span>
+        <div class="personal-info">
+            <p>
+                <span>대표</span> 김예빈<br>
+                <span>소속</span> 한국외국어대학교 서울캠퍼스<br>
+                <span>주소</span> 서울특별시 동대문구 이문로 107
+            </p>
+        </div>
+        <div class="links">
+            <a href="https://www.hufs.ac.kr/" target="_blank"><img src="media/hufs.jpeg" alt="hufs"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="media/facebook.ico" alt="facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="media/insta.jpeg" alt="instagram"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="media/twitter.jpeg" alt="twitter"></a>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        // 데스크탑으로 실행했을 때 초기 로컬 스토리지에 영화 예매와 관계없는 값이 저장되어 있는 경우를 방지
+        var ls = window.localStorage;
+        var first = ls.key(0);
+        if (first == "TPM") {
+            ls.clear();
+        }
+    </script>
+</body>
+</html>

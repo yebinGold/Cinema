@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema - 예매 확인/취소</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="pageload();">
+    <div id="header">
+        <a href="main.html"><div id="logo">Violet Cinema</div></a>
+        <span id="greeting">김예빈님, 환영합니다</span>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="main.html">홈</a>
+                </li>
+                <li>
+                    <a href="cinema-info.html">극장 소개</a>
+                </li>
+                <li>
+                    <a href="time-table.html">상영시간표</a>
+                </li>
+                <li>
+                    <a href="booking.html">영화 예매</a>
+                </li>
+                <li>
+                    <a href="#" class="nowpage">예매 확인/취소</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="mainbox">
+        <h2 class="title">나의 예매 내역</h2>
+        <p id="booking-list__default">예매 내역이 없습니다.</p>
+        <ul id="booking-list">
+        </ul>
+    </div>
+    <script>
+        var ls = window.localStorage;
+        function pageload(){
+            var list = document.getElementById("booking-list");
+
+            if (ls.length > 0) {
+                document.getElementById("booking-list__default").style.display = "none";
+                list.innerHTML = "";
+
+                for (var i = 0; i < ls.length; i++){
+                    var book = JSON.parse(ls.getItem(i));
+                    var link = "booking-detail.html?key=" + i;
+                    var name = book["film"];
+                    var date = book["date"];
+                    var time = book["time"];
+                    var room = book["room"];
+                    var ppl = book["ppl"];
+                    var imgLink = "media/";
+
+                    if (name.substring(0,2) == "닥터") {
+                        imgLink += "doctor2.jpeg";
+                    }
+                    else if (name.substring(0,2) == "스파") {
+                        imgLink += "spiderman.jpeg";
+                    }
+                    else if (name.substring(0,2) == "베놈") {
+                        imgLink += "venom.jpeg";
+                    }
+                    else if (name.substring(0,2) == "이프") {
+                        imgLink += "ifonly.jpeg";
+                    }
+                    else if (name.substring(0,2) == "리틀") {
+                        imgLink += "forest.jpeg";
+                    }
+                    else {
+                        imgLink += "star.jpeg";
+                    }
+
+                    list.innerHTML += "<li onclick=\"location.href=" + "'" + link + "';\">" + "<img src='" + imgLink + "'>" + "<div class='booking-list__info'><strong>" + name + "</strong>" + "<p>" + date + " " + time + "</p><p>" + room + "관 | " + ppl + "인</p></div><button class='booking-btn detail-btn' type='button'>상세/취소</button></li>";
+                }
+            }
+        }
+    </script>
+    <footer>
+        <span id="logo">Violet Cinema</span>
+        <div class="personal-info">
+            <p>
+                <span>대표</span> 김예빈<br>
+                <span>소속</span> 한국외국어대학교 서울캠퍼스<br>
+                <span>주소</span> 서울특별시 동대문구 이문로 107
+            </p>
+        </div>
+        <div class="links">
+            <a href="https://www.hufs.ac.kr/" target="_blank"><img src="media/hufs.jpeg" alt="hufs"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="media/facebook.ico" alt="facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="media/insta.jpeg" alt="instagram"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="media/twitter.jpeg" alt="twitter"></a>
+        </div>
+    </footer>
+
+</body>
+</html>
